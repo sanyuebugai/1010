@@ -1,0 +1,205 @@
+/* 基础样式 */
+body {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+#wrapper {
+  position: relative;
+  padding-top: 2rem;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#scoreBox{
+  position: absolute;
+  top: 0.5rem;
+  line-height: 1rem;
+  width: 100%;
+  text-align: center;  
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #FFC107;
+}
+#gameBox{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 7rem;/*棋盘大小*/
+  height: 7rem;/*棋盘大小*/
+  margin: 0 auto;
+}
+.cube{
+  width: 0.68rem;/*方块边长*/
+  height: 0.68rem;/*方块边长*/
+  border-radius: 0.07rem;
+  background-color: #e2e2e2;
+}
+#selectBox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+  height: 1rem;
+  width: 7.5rem;
+}
+#selectBox .selectBox{
+  display: flex;
+  width: 2.5rem;
+  justify-content: center;
+}
+.cube.yellow{
+  background-color: #ffc107;
+}
+.cube.org{
+  background-color: #ff9800;
+}
+.cube.red{
+  background-color: #ec1f10;
+}
+.cube.purplish{
+  background-color: #e91e63;
+}
+.cube.green{
+  background-color: #8bc34a;
+}
+.cube.purple{
+  background-color: #9b82da;
+}
+.cube.blue{
+  background-color: #59daec;
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.row_2{
+  width: 1.38rem;
+}
+.row_3{
+  width: 2.08rem;
+}
+.row_4{
+  width: 2.78rem;
+}
+.row_5{
+  width: 3.48rem;
+}
+.col{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 0.58rem;
+}
+.col .cube,
+.square .cube,
+.shape_s .cube,
+.shape_l .cube{
+  margin-bottom: 0.02rem;
+}
+.col,.square{
+  margin-bottom: -0.02rem;
+}
+.square{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+.square_1{
+  width: 0.68rem;
+}
+.square_4{
+  width: 1.38rem;
+}
+.square_9{
+  width: 2.08rem;
+}
+.shape_s{
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+  width: 1.38rem;
+}
+.shape_lt{
+  flex-wrap: wrap;
+}
+.shape_rt{
+  flex-wrap: wrap;
+}
+.shape_lb{
+  flex-wrap: wrap-reverse;
+}
+.shape_rb{
+  flex-wrap: wrap-reverse;
+}
+.transparent{
+  opacity: 0;
+}
+.shape_l{
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+  width: 2.08rem;
+}
+/* 样式 */
+#selectBox div.item{
+  transform: scale(0.5);
+  /* margin: 0 auto; */
+  min-height: 1rem;
+}
+#selectBox .item{
+  transition-property: width, height;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+#gameBox .cube{
+  transition-property: background-color;
+  transition-duration: 0s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+/* 弹窗 */
+#mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999;
+  background-color: rgba(0,0,0,0.7);
+}
+#modal{
+  width: 5rem;
+  margin: 1rem auto;
+  border-radius: 0.2rem;
+  background-color: #fff;
+  padding: 0.5rem 0;
+}
+#modal p{
+  font-size: 0.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #E91E63;
+}
+#modal h4{
+  text-align: center;
+  font-size: 0.6rem;
+  margin-bottom: 0.5rem;
+  color: #FF9800;
+}
+#modal a{
+  display: block;
+  width: 2.3rem;
+  margin: 0 auto;
+  padding: 0.1rem;
+  font-size: 0.4rem;
+  border-radius: 0.1rem;
+  border: 1px solid #E91E63;
+  color: #E91E63;
+  font-weight: bold;
+  text-align: center;
+}
