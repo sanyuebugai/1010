@@ -87,6 +87,7 @@ $(function(){
     },
     mouseEnd: function(ev){
       var self = this;
+      if(!curObj) return;
       var xs = self.getRem(parseFloat(curObj.css('left')));
       var ys = self.getRem(parseFloat(curObj.css('top')));
       var w = self.getRem(parseFloat(curObj.css('width')));
