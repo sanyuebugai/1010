@@ -55,7 +55,9 @@ $(function(){
           'position': 'absolute',
           'transform': 'scale(1)',
           'top': self.getRem(y) + 'rem',
-          'left': self.getRem(x) + 'rem'
+          'left': self.getRem(x) + 'rem',
+          'min-height': 'auto',
+          'min-width': 'auto',
         });
       });
       $('#wrapper').on('touchmove', function(event) {
@@ -113,7 +115,9 @@ $(function(){
         'position': 'unset',
         'transform': 'scale(0.5)',
         'top': 0,
-        'left': 0
+        'left': 0,
+        'min-height': '1.5rem',
+        'min-width': '1.38rem',
       });
       inX = 0;
       inY = 0;
@@ -133,7 +137,7 @@ $(function(){
         });
       }
       leftCube.splice($.inArray(curObj.data('type'), leftCube), 1);
-      curObj.css('opacity', '0');
+      curObj.css('display', 'none');
       inX = 0;
       inY = 0;
       curObj = null;
