@@ -149,7 +149,8 @@ body {
 #selectBox div.item{
   transform: scale(0.5);
   /* margin: 0 auto; */
-  min-height: 1rem;
+  /* min-height: 1.5rem; */
+  /* min-width: 1.3rem; */
 }
 #selectBox .item{
   transition-property: width, height;

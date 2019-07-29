@@ -47,8 +47,10 @@ $(function(){
         curObj = $(this);
         inX = event.originalEvent.changedTouches[0].pageX - $(this).offset().left
         inY = event.originalEvent.changedTouches[0].pageY - $(this).offset().top
-        var x = event.originalEvent.changedTouches[0].pageX - inX;
-        var y = event.originalEvent.changedTouches[0].pageY - inY;
+        // var x = event.originalEvent.changedTouches[0].pageX - inX;
+        // var y = event.originalEvent.changedTouches[0].pageY - inY;
+        var x = event.originalEvent.changedTouches[0].pageX - parseFloat($(this).css('width'))*0.8;
+        var y = event.originalEvent.changedTouches[0].pageY - parseFloat($(this).css('height'))*0.8;
         curObj.css({
           'position': 'absolute',
           'transform': 'scale(1)',
@@ -60,8 +62,10 @@ $(function(){
         if(curObj){
           var x1 = event.originalEvent.changedTouches[0].pageX;
           var y1 = event.originalEvent.changedTouches[0].pageY;
-          var x = x1 - inX;
-          var y = y1 - inY;
+          // var x = x1 - inX;
+          // var y = y1 - inY;
+          var x = event.originalEvent.changedTouches[0].pageX - parseFloat(curObj.css('width'))*0.8;
+          var y = event.originalEvent.changedTouches[0].pageY - parseFloat(curObj.css('height'))*0.8;
           curObj.css({
             'top': self.getRem(y) + 'rem',
             'left': self.getRem(x) + 'rem'
@@ -85,8 +89,8 @@ $(function(){
       var ys = self.getRem(parseFloat(curObj.css('top')));
       var w = self.getRem(parseFloat(curObj.css('width')));
       var h = self.getRem(parseFloat(curObj.css('height')));
-      if( (ys < o_ys-misW || ys + h > o_yl + misW) || 
-          (xs < o_xs-misW || xs + w > o_xl + misW)) {
+      if( (ys < o_ys-misW || ys + h > o_yl + misW*0.5) || 
+          (xs < o_xs-misW || xs + w > o_xl + misW*0.5)) {
         self.failHandle();
       } else{
         // 获取当前放置位置左上角小方块的横纵序号，由0开始
